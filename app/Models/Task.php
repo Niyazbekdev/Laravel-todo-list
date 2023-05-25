@@ -16,10 +16,10 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'deadline',
+        'is_done',
     ];
     protected $casts = [
-        'active' => 'boolean'
+        'is_done' => 'boolean'
     ];
 
     public function user(): BelongsTo

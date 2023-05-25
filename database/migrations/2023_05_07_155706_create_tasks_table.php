@@ -17,8 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained('users');
             $table->string('title');
             $table->mediumText('description')->nullable();
-            $table->timestamp('deadline');
-            $table->boolean('active')->default(true);
+            $table->boolean('is_done')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });
