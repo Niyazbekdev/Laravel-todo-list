@@ -11,7 +11,7 @@ class StoreTask extends BaseService
     public function rules(): array
     {
         return [
-            'title'=> 'required|unique:tasks,title',
+            'title'=> 'required',
             'description' => 'nullable',
         ];
     }
@@ -19,7 +19,7 @@ class StoreTask extends BaseService
     /**
      * @throws ValidationException
      */
-    public function execute(array $data)
+    public function execute(array $data): bool
     {
 
         $this->validate($data);
@@ -28,6 +28,6 @@ class StoreTask extends BaseService
             'title' => $data['title'],
             'description' => $data['description'],
         ]);
-        return $task;
+        return true;
     }
 }

@@ -11,7 +11,7 @@ class UpdateTask extends BaseService
     {
         return [
             'id' => 'exists:tasks,id',
-            'title' => 'required|unique:tasks,title',
+            'title' => 'required',
             'description' => 'required'
         ];
     }

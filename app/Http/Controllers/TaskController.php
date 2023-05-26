@@ -31,7 +31,7 @@ class TaskController extends Controller
     public function store(Request $request){
         try{
             $task = app(StoreTask::class)->execute($request->all());
-            return new TaskResource($task);
+            return $this->respondSuccess();
         }catch(ValidationException $exception){
             return $this->respondValidatorFailed($exception->validator);
         }
